@@ -1,5 +1,21 @@
 <h1>Price list of all products</h1>
 
-<table>
-	
+<table border=1>
+	<tr>
+		<th>Nazwa produktu</th>
+		<th>Opis produktu</th>
+		<th>Cena</th>
+		<th>Ilość</th>
+	</tr>
+	{% for p in product_list %}
+	<tr>	
+			<td>{{ p.product_name }}</td>
+			<td>{{ 	p.product_description }}</td>
+			<td>{{ p.price }}</td>
+			<td>{{ p.quantity }}</td>
+	</tr>
+		
+	{% endfor %}
 </table>
+
+<p>	<a href="{% url 'homepage' %}">Wróć do strony głównej</a></p>
